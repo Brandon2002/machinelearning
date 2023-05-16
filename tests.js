@@ -8,6 +8,6 @@ test('Submit a form', async t => {
 
         //Fill the name
         .typeText("#user", "Brandon Tapia")
-        .typeText("#password", "adeleadkins")
+        .typeText("#contrasena", "adeleadkins")
         .click("#button")
     })
