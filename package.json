@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Diego-Gentner-Control-de-Calidad/machinelearning#readme",
   "devDependencies": {
     "cypress": "^12.12.0"
+  },
+  "dependencies": {
+    "testcafe": "^2.6.0"
   }
 }
