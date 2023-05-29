@@ -1,0 +1,26 @@
+{
+  "name": "machinelearning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tests.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diego-Gentner-Control-de-Calidad/machinelearning.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diego-Gentner-Control-de-Calidad/machinelearning/issues"
+  },
+  "homepage": "https://github.com/Diego-Gentner-Control-de-Calidad/machinelearning#readme",
+  "devDependencies": {
+    "cypress": "^12.12.0"
+  },
+  "dependencies": {
+    "testcafe": "^2.6.0"
+  }
+}
