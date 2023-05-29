@@ -8,7 +8,7 @@
       background-color: #f2f2f2;
     }
 
-    .login-container {
+    .loginForm {
       width: 300px;
       margin: 0 auto;
       background-color: #fff;
@@ -18,23 +18,23 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     }
 
-    .login-container h2 {
+    .loginForm h2 {
       text-align: center;
       color: #333;
     }
 
-    .login-container img {
+    .loginForm img {
         width: 50%;
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .login-container input[type="text"]{
+    .loginForm input[type="text"]{
         margin-top: 15px;
     }
-    .login-container input[type="text"],
-    .login-container input[type="password"] {
+    .loginForm input[type="text"],
+    .loginForm input[type="password"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -43,7 +43,7 @@
       box-sizing: border-box;
     }
 
-    .login-container input[type="submit"] {
+    .loginForm input[type="submit"] {
       width: 100%;
       background-color: #4CAF50;
       color: #fff;
@@ -53,20 +53,45 @@
       cursor: pointer;
     }
 
-    .login-container input[type="submit"]:hover {
+    .loginForm input[type="submit"]:hover {
       background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <div class="login-container">
+  
+  <div class="loginForm">
     <h2>Iniciar sesión</h2>
     <img src="/machinelearning/UdeC_DosLineas_Negro.png" alt="">
-    <form>
+    <form id="loginForm">
       <input type="text" id="user" placeholder="Usuario" required>
       <input type="password" id="contrasena" placeholder="Contraseña" required>
       <input type="submit" id="button" value="Iniciar sesión">
+      
     </form>
+    <p id="error-message" class="error-message" style="color: red;"></p>
   </div>
+  <script>
+     document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que se envíe el formulario de forma predeterminada
+
+        var username = document.getElementById('user').value;
+        var password = document.getElementById('contrasena').value;
+
+        // Realiza la validación de los datos
+        var emailRegex = /^[A-Za-z0-9._%+-]+@gmail\.com$/;
+        var passwordRegex = /^(?=.*[A-Z])(?=.*[0-9]).{8,}$/;
+
+        if (!emailRegex.test(username)) {
+          document.getElementById('error-message').textContent = 'El usuario debe ser una dirección de correo de Gmail válida.';
+        } else if (!passwordRegex.test(password)) {
+          document.getElementById('error-message').textContent = 'La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.';
+        } else {
+          // Los datos son válidos, puedes realizar las acciones adicionales (por ejemplo, enviar el formulario)
+          document.getElementById('error-message').textContent = ''; // Limpiar el mensaje de error
+          document.getElementById('loginForm').submit(); // Enviar el formulario
+        }
+      });
+  </script>
 </body>
 </html>
